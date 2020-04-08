@@ -1,14 +1,11 @@
-node
-{
-stage('Sonarqube') {
-    //environment {
-        //scannerHome = tool 'SonarQubeScanner'
-   // }
-   
-    withSonarQubeEnv('sonarqube') {
-            sh 'mvn clean package sonar:sonar'
-        }
+node {
+    stage('Sonarqube') 
+    {
+        withSonarQubeEnv('sonarqube') 
+            {
+                sh 'mvn clean package sonar:sonar'
+            }
         
     
-}
-}
+    }
+    }
