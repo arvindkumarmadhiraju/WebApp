@@ -1,11 +1,14 @@
+node
+{
 stage('Sonarqube') {
-    environment {
-        scannerHome = tool 'SonarQubeScanner'
-    }
+    //environment {
+        //scannerHome = tool 'SonarQubeScanner'
+   // }
    
     withSonarQubeEnv('sonarqube') {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh 'mvn clean package sonar:sonar'
         }
         
     
+}
 }
