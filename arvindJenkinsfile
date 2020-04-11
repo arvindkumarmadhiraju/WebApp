@@ -1,14 +1,5 @@
 node {
-    stage('Sonarqube') 
-    {
-        environment 
-            {
-                scannerHome = tool 'SonarQubeScanner'
-            }
-    
-        withSonarQubeEnv('sonarqube') 
-            {
-                sh "${scannerHome}/bin/sonar-scanner"
-            }
+  node('linux') {
+  git poll: true, url: 'https://github.com/arvindkumarmadhiraju/WebApp.git'
     }
     }
