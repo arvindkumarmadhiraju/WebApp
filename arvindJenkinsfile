@@ -1,5 +1,5 @@
 node {
-  node('linux') {
+  stage('linux') {
   git poll: true, url: 'https://github.com/arvindkumarmadhiraju/WebApp.git'
     }
     }
